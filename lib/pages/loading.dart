@@ -14,15 +14,24 @@ class _LoadingState extends State<Loading> {
   @override
   void initState() {
     super.initState();
-    getData();
+    getTime();
   }
 
-  void getData() async {
-  var url = Uri.parse('https://jsonplaceholder.typicode.com/todos/1');
+  void getTime() async {
+  var url = await Uri.parse('http://worldtimeapi.org/api/timezone/Europe/Zurich');
   http.Response response = await http.get(url);
   Map data = jsonDecode(response.body); // Corrected this line
-  print(data); // Optional: print the data to the console
-  print(data['title']);
+  //print(data);
+
+  //get properties from data
+  String datetime = data['datetime'];
+  String offset = data['utc_offset'];
+  //print(datetime);
+  //print(offset);
+
+ 
+
+
 }
 
 
