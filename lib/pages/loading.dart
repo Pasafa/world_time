@@ -29,6 +29,11 @@ class _LoadingState extends State<Loading> {
   //print(datetime);
   //print(offset);
 
+  //create DateTime object
+
+  DateTime now = DateTime.parse(datetime);
+
+
  
 
 
