@@ -25,13 +25,15 @@ class _LoadingState extends State<Loading> {
 
   //get properties from data
   String datetime = data['datetime'];
-  String offset = data['utc_offset'];
+  String offset = data['utc_offset'].substring(1,3);
   //print(datetime);
   //print(offset);
 
   //create DateTime object
 
   DateTime now = DateTime.parse(datetime);
+  now = now.add(Duration(hours: int.parse(offset)));
+  print(now);
 
 
  
